@@ -1,15 +1,6 @@
 def check_guess(number_to_guess, user_input):
-    try:
-        guess = int(user_input)
-
-        if guess < number_to_guess:
-            return "Too low"
-        elif guess > number_to_guess:
-            return "Too high"
-        else:
-            return "Correct guess!"
-    except ValueError:
-        return "Please enter a valid number"
+    
+    return 0
 
 
 
