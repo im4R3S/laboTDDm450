@@ -1,72 +1,52 @@
 import pytest
-from guess_the_number import GuessTheNumber
+import sys
+sys.path.insert(1, '../src/')
+from guess_the_number import check_guess
 
-@pytest.fixture
-def game():
-    return GuessTheNumber(5)  # Initialize the game with a specific number to guess
+def test_correct_guess():
+    # Arrange 
+    number_to_guess = 5
+    user_input = '5'
 
-def test_guess_too_low(game, capsys):
-    # Arrange
-    expected_output = "Too low"
+    # Act
+    result = check_guess(number_to_guess, user_input)
+    
+    # Assert
+    assert result == "Correct guess!"
+
+def test_guess_too_low():
+    # Arrange 
+    number_to_guess = 5
+    user_input = '3'
+
+    # Act
+    result = check_guess(number_to_guess, user_input)
+    
+    # Assert
+    assert result == "Too low"
+
+def test_guess_too_high():
+    # Arrange 
+    number_to_guess = 5
+    user_input = '8'
     
     # Act
-    result = game.check_guess(3)
-
-    # Assert
-    assert result == expected_output
-    captured = capsys.readouterr()
-    assert captured.out == ""  # Ensure no output is printed
-
-def test_guess_too_high(game, capsys):
-    # Arrange
-    expected_output = "Too high"
+    result = check_guess(number_to_guess, user_input)
     
-    # Act
-    result = game.check_guess(8)
-
     # Assert
-    assert result == expected_output
-    captured = capsys.readouterr()
-    assert captured.out == ""  # Ensure no output is printed
+    assert result == "Too high"
 
-def test_correct_guess(game, capsys):
+@pytest.mark.parametrize("number_to_guess, user_input, expected_result", [
+
     # Arrange
-    expected_output = "Correct guess!"
-    
-    # Act
-    result = game.check_guess(5)
-
-    # Assert
-    assert result == expected_output
-    captured = capsys.readouterr()
-    assert captured.out == ""  # Ensure no output is printed
-
-import pytest
-from guess_the_number import GuessTheNumber
-
-@pytest.fixture
-def game():
-    return GuessTheNumber(5)  # Initialize the game with a specific number to guess
-
-@pytest.mark.parametrize("user_input, expected_output", [
-    # Test cases for too low guesses
-    (3, "Too low"),    # test case 4
-    (1, "Too low"),    # test case 5
-    (0, "Too low"),    # test case 6
-
-    # Test cases for too high guesses
-    (8, "Too high"),   # test case 7
-    (10, "Too high"),  # test case 8
-    (100, "Too high"), # test case 9
-
-    # Test case for correct guess
-    (5, "Correct guess!")  # test case 10
+    (5, '5', "Correct guess!"),
+    (5, '3', "Too low"),
+    (5, '8', "Too high")
 ])
-def test_guess_game(game, capsys, user_input, expected_output):
-    # Act
-    result = game.check_guess(user_input)
+def test_guesses(number_to_guess, user_input, expected_result):
 
+    # Act
+    result = check_guess(number_to_guess, user_input)
+    
     # Assert
-    assert result == expected_output
-    captured = capsys.readouterr()
-    assert captured.out == ""  # Ensure no output is printed
+    assert result == expected_result

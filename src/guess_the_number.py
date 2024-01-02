@@ -1,14 +1,37 @@
-class GuessTheNumber:
-    def __init__(self, number):
-        self.number_to_guess = number
-        self.guess = None
+def check_guess(number_to_guess, user_input):
+    try:
+        guess = int(user_input)
 
-    def check_guess(self, user_input):
-        self.guess = int(user_input)
-
-        if self.guess < self.number_to_guess:
+        if guess < number_to_guess:
             return "Too low"
-        elif self.guess > self.number_to_guess:
+        elif guess > number_to_guess:
             return "Too high"
         else:
             return "Correct guess!"
+    except ValueError:
+        return "Please enter a valid number"
+
+
+
+
+# if you want to play the game (uncomment the code below)
+    
+"""
+
+number_to_guess = 42
+
+while True:
+    user_input = input("Enter your guess (or 'exit' to quit): ")
+
+    if user_input.lower() == 'exit':
+        print("Thanks for playing!")
+        break
+
+    result = check_guess(number_to_guess, user_input)
+    print(result)
+
+    if result == "Correct guess!":
+        print("Congratulations, you've guessed the number!")
+        break
+
+"""        
