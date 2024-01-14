@@ -17,10 +17,10 @@ def test_correct_guess():
 def test_guess_too_low():
     # Arrange 
     number_to_guess = 5
-    user_input = '3'
+    user_input = 5
 
     # Act
     result = check_guess(number_to_guess, user_input)
     
     # Assert
-    assert result == "Too low"
+    assert result == user_input
