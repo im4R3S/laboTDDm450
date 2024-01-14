@@ -1,4 +1,5 @@
 def check_guess(number_to_guess, user_input):
+    
   
-    return 0
+    return user_input
  

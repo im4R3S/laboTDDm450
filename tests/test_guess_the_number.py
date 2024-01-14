@@ -12,5 +12,5 @@ def test_correct_guess():
     result = check_guess(number_to_guess, user_input)
     
     # Assert
-    assert result == 0
+    assert result == user_input
 
