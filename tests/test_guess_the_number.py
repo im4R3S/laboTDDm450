@@ -14,3 +14,13 @@ def test_correct_guess():
     # Assert
     assert result == user_input
 
+def test_guess_too_low():
+    # Arrange 
+    number_to_guess = 5
+    user_input = '3'
+
+    # Act
+    result = check_guess(number_to_guess, user_input)
+    
+    # Assert
+    assert result == "Too low"
