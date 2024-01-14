@@ -1,5 +1,5 @@
 def check_guess(number_to_guess, user_input):
     
   
-    return user_input
+    return "Too low"
  
