@@ -19,6 +19,7 @@ def test_correct_guess():
 
     # Arrange
     (5, '5'),
+    (5, 'A'),
     
 ])
 def test_guesses(number_to_guess, user_input):
@@ -28,3 +29,4 @@ def test_guesses(number_to_guess, user_input):
     
     # Assert
     assert result == int(user_input)
+
