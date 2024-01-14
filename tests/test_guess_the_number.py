@@ -15,18 +15,13 @@ def test_correct_guess():
     assert result == user_input
 
 
-@pytest.mark.parametrize("number_to_guess, user_input", [
-
-    # Arrange
-    (5, '5'),
-    (5, 'A'),
-    
+@pytest.mark.parametrize("number_to_guess, user_input, expected_result", [
+    (5, '5', 5),   # Valid input
+    (5, 'A', 0),   # Invalid input
 ])
-def test_guesses(number_to_guess, user_input):
-
+def test_guesses(number_to_guess, user_input, expected_result):
     # Act
-    result = check_guess(number_to_guess, user_input )
-    
-    # Assert
-    assert result == int(user_input)
+    result = check_guess(number_to_guess, user_input)
 
+    # Assert
+    assert result == expected_result
