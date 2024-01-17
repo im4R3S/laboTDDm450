@@ -1,9 +1,4 @@
 def check_guess(number_to_guess, user_input):
-<<<<<<< Updated upstream
-  
-    return "Correct guess!"
- 
-=======
     try:
         # user_input = int(user_input)
         
@@ -21,4 +16,3 @@ def check_guess(number_to_guess, user_input):
         return 0
 
     return 0
->>>>>>> Stashed changes
