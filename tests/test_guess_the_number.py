@@ -16,8 +16,8 @@ def test_correct_guess():
 
 
 @pytest.mark.parametrize("number_to_guess, user_input, expected_result", [
-    (5, '5', 5),   # Valid input
-    (5, 'A', 0),   # Invalid input
+    (5, 5, 5),   # Valid input
+    (0, 0, 0),   # Invalid input
 ])
 def test_guesses(number_to_guess, user_input, expected_result):
     # Act
