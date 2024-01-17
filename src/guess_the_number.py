@@ -1,7 +1,5 @@
 def check_guess(number_to_guess, user_input):
     try:
-        # user_input = int(user_input)
-        
         if not isinstance(user_input, int):
             raise TypeError('Work with Numbers Only')
         if user_input < 0:
