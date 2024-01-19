@@ -1,6 +1,6 @@
 # laboTDDm450
 
-![example workflow](https://github.com/im4R3S/laboTDDm450/blob/exo2/.github/workflows/python-app.yml/badge.svg)
+[![laboTDDm450 exo2](https://github.com/im4R3S/laboTDDm450/actions/workflows/python-app.yml/badge.svg?branch=exo2)](https://github.com/im4R3S/laboTDDm450/actions/workflows/python-app.yml)
 
 
 
