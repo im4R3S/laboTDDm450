@@ -1,6 +1,6 @@
 def check_guess(number_to_guess, user_input):
     try:
-        user_input = int(user_input)
+        # user_input = int(user_input)
         if user_input < 0:
             raise ValueError('Work with Positive Numbers Only')
 
