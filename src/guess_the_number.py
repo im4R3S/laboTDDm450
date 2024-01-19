@@ -5,7 +5,8 @@ def check_guess(number_to_guess, user_input):
             raise ValueError('Work with Positive Numbers Only')
 
         if user_input < number_to_guess:
-            return "Too low"
+            print("Too low")
+            return user_input
         elif user_input == number_to_guess:
             return user_input
     except ValueError:
