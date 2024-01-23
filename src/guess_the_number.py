@@ -15,4 +15,3 @@ def check_guess(number_to_guess, user_input):
     except ValueError:
         raise TypeError('Work with Numbers Only')
 
-    return 0
