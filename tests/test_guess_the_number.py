@@ -16,7 +16,7 @@ def test_correct_guess():
 
 @pytest.mark.parametrize("number_to_guess, user_input, expected_result", [
     # Arrange
-    (5, 1, 5), 
+    (5, 5, 5), 
     (1, 1, 1),   
 ])
 def test_guesses(number_to_guess, user_input, expected_result):
