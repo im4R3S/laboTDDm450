@@ -6,6 +6,9 @@ def check_guess(number_to_guess, user_input):
         if user_input < number_to_guess:
             print("Too low")
             return user_input
+        elif user_input > number_to_guess:
+            print("Too high")
+            return user_input
         elif user_input == number_to_guess:
             print("Correct")
             return user_input
