@@ -24,4 +24,4 @@ def test_guesses(number_to_guess, user_input, expected_result):
     result = check_guess(number_to_guess, user_input)
 
     # Assert
-    assert result == user_input
+    assert result == number_to_guess
